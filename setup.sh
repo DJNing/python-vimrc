@@ -34,11 +34,11 @@ echo "${NORMAL}"
     VIM=~/.vim
   fi
 
-  if [ -d "$VIM" ]; then
-    printf "${YELLOW}%s${NORMAL}\n" "You already have $VIM directory."
-    printf "${YELLOW}%s${NORMAL}\n" "You have to remove $VIM if you want to re-install."
-    exit 0
-  fi
+  # if [ -d "$VIM" ]; then
+  #   printf "${YELLOW}%s${NORMAL}\n" "You already have $VIM directory."
+  #   printf "${YELLOW}%s${NORMAL}\n" "You have to remove $VIM if you want to re-install."
+  #   exit 0
+  # fi
 
   # Prevent the cloned repository from having insecure permissions. Failing to do
   # so causes compinit() calls to fail with "command not found: compdef" errors
