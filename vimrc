@@ -239,3 +239,4 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python3']
 
 "  nmap <leader>g :YcmCompleter GoTo<CR>
 "  nmap <leader>d :YcmCompleter GoToDefinition<CR>
+autocmd BufWinEnter *.py nmap <silent> <F5>:w<CR>:terminal python3 -m pdb '%:p'<CR>
