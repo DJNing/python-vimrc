@@ -85,7 +85,7 @@ echo "${NORMAL}"
   printf "${YELLOW}%s${NORMAL}\n" "Do not worry about error messages. When it occurs just press enter and wait till all plugins are installed."
   printf "${BLUE}%s${NORMAL}\n" "Keep calm and use VIM!"
 }
-git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+# git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 wrapper
 vim +PluginInstall
 pip install pudb
