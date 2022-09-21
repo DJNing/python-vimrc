@@ -6,7 +6,7 @@ wrapper() {
   BLUE="\033[0;36m"
   NORMAL="\033[0m"
 
-  REPO_HTTPS="https://github.com/ets-labs/python-vimrc.git"
+  REPO_HTTPS="https://github.com/DJNing/python-vimrc.git"
   VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
 
 echo "${BLUE}"
@@ -85,6 +85,7 @@ echo "${NORMAL}"
   printf "${YELLOW}%s${NORMAL}\n" "Do not worry about error messages. When it occurs just press enter and wait till all plugins are installed."
   printf "${BLUE}%s${NORMAL}\n" "Keep calm and use VIM!"
 }
-
+git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 wrapper
 vim +PluginInstall
+pip install pudb
