@@ -8,6 +8,7 @@ wrapper() {
 
   REPO_HTTPS="https://github.com/DJNing/python-vimrc.git"
   VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
+  JEDI_HTTPS="https://github.com/davidhalter/jedi-vim.git"
 
 echo "${BLUE}"
 cat << "HELLO_TEXT"
@@ -30,15 +31,15 @@ vvvvvvv           vvvvvvviiiiiii    mmmmmmm    mmmmmmm   rrrrr   rrrrrrrrr      
 HELLO_TEXT
 echo "${NORMAL}"
 
-  # if [ ! -n "$VIM" ]; then
-  #   VIM=~/.vim
-  # fi
+  if [ ! -n "$VIM" ]; then
+    VIM=~/.vim
+  fi
 
-  # if [ -d "$VIM" ]; then
-  #   printf "${YELLOW}%s${NORMAL}\n" "You already have $VIM directory."
-  #   printf "${YELLOW}%s${NORMAL}\n" "You have to remove $VIM if you want to re-install."
-  #   exit 0
-  # fi
+  if [ -d "$VIM" ]; then
+    printf "${YELLOW}%s${NORMAL}\n" "You already have $VIM directory."
+    printf "${YELLOW}%s${NORMAL}\n" "You have to remove $VIM if you want to re-install."
+    exit 0
+  fi
 
   # Prevent the cloned repository from having insecure permissions. Failing to do
   # so causes compinit() calls to fail with "command not found: compdef" errors
@@ -71,7 +72,7 @@ echo "${NORMAL}"
 
   if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
       printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
-      env git clone --depth=1 $VUNDLE_HTTPS "$VIM/bundle/Vundle.vim"
+      env git clone --depth=1 $JEDI_HTTPS "$VIM/bundle/jedi-vim"
   fi
 
   if [ ! -f $VIM/colors/wombat256mod.vim ]; then
@@ -81,11 +82,16 @@ echo "${NORMAL}"
       wget 'http://www.vim.org/scripts/download_script.php?src_id=13400' -O $VIM/colors/wombat256mod.vim
   fi
 
+  if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
+      printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
+      env git clone --depth=1 $VUNDLE_HTTPS "$VIM/bundle/Vundle.vim"
+  fi
+
   printf "${GREEN}%s${NORMAL}\n" "Vimrc has been configured ;)"
   printf "${YELLOW}%s${NORMAL}\n" "Do not worry about error messages. When it occurs just press enter and wait till all plugins are installed."
   printf "${BLUE}%s${NORMAL}\n" "Keep calm and use VIM!"
 }
-git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+# git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
 wrapper
 vim +PluginInstall
-pip install pudb
+# pip install pudb
