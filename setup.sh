@@ -8,7 +8,7 @@ wrapper() {
 
   REPO_HTTPS="https://github.com/DJNing/python-vimrc.git"
   VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
-
+  JEDI_HTTPS="https://github.com/davidhalter/jedi-vim.git"
 echo "${BLUE}"
 cat << "HELLO_TEXT"
                           iiii
@@ -72,6 +72,10 @@ echo "${NORMAL}"
   if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
       printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
       env git clone --depth=1 $VUNDLE_HTTPS "$VIM/bundle/Vundle.vim"
+  fi
+  if [ ! -d "$VIM/bundle/jedi-vim" ]; then
+      printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
+      env git clone --recursive $JEDI_HTTPS "$VIM/bundle/jedi-vim"
   fi
 
   if [ ! -f $VIM/colors/wombat256mod.vim ]; then
