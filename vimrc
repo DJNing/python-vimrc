@@ -46,7 +46,7 @@ call vundle#begin()
     "-------------------=== Languages support ===-------------------
     Plugin 'tpope/vim-commentary'               " Comment stuff out
     Plugin 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
-    Plugin 'Rykka/riv.vim'                      " ReStructuredText plugin
+    "  Plugin 'Rykka/riv.vim'                      " ReStructuredText plugin
     Plugin 'davidhalter/jedi-vim'
     "  Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
 
