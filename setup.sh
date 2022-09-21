@@ -30,9 +30,9 @@ vvvvvvv           vvvvvvviiiiiii    mmmmmmm    mmmmmmm   rrrrr   rrrrrrrrr      
 HELLO_TEXT
 echo "${NORMAL}"
 
-  if [ ! -n "$VIM" ]; then
-    VIM=~/.vim
-  fi
+  # if [ ! -n "$VIM" ]; then
+  #   VIM=~/.vim
+  # fi
 
   # if [ -d "$VIM" ]; then
   #   printf "${YELLOW}%s${NORMAL}\n" "You already have $VIM directory."
